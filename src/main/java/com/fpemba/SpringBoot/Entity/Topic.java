@@ -2,6 +2,10 @@ package com.fpemba.SpringBoot.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.Collection;
+import java.util.Collections;
 
 @Entity
 public class Topic {
@@ -10,6 +14,7 @@ public class Topic {
     private String id;
     private String name;
     private String description;
+
 
     public Topic() {
     }
