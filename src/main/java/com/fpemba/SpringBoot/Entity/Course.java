@@ -3,7 +3,6 @@ package com.fpemba.SpringBoot.Entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Course {
@@ -26,7 +25,8 @@ public class Course {
             this.topic = new Topic(topicId," "," ");
         }
 
-        public String getId() {
+
+    public String getId() {
             return id;
         }
 

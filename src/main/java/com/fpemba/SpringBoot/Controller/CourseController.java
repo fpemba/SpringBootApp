@@ -15,7 +15,7 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping("/topics/{id}/courses")
-    public List<Course> getAllTopics(@PathVariable String id) {
+    public List<Course> getAllCourses(@PathVariable String id) {
         return courseService.getAllCourses(id);
     }
 
