@@ -20,19 +20,19 @@ public class CourseController {
     }
 
     @GetMapping("/topics/{topicId}/courses/{id}")
-    public void getCourse(@PathVariable String id) {
+    public void getCourse(@PathVariable String topicId, @PathVariable String id) {
         courseService.getCourse(id);
     }
 
     @PostMapping("/topics/{topicId}/courses")
-    public void addCourse(@RequestBody Course course,@PathVariable String topicId) {
-        course.setTopic(new Topic(topicId,"",""));
+    public void addCourse(@RequestBody Course course, @PathVariable String topicId) {
+        course.setTopic(new Topic(topicId, "", ""));
         courseService.addCourse(course);
     }
 
     @PutMapping("/topics/{topicId}/courses/{id}")
     public void updateCourse(@RequestBody Course course, @PathVariable String topicId, @PathVariable String id) {
-        course.setTopic(new Topic(topicId,"",""));
+        course.setTopic(new Topic(topicId, "", ""));
         courseService.updateCourse(course);
     }
 

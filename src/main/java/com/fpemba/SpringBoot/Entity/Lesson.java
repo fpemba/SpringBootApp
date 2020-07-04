@@ -18,11 +18,11 @@ public class Lesson {
     public Lesson() {
     }
 
-    public Lesson(String id, String name, String description,String courseId) {
+    public Lesson(String id, String name, String description, String courseId) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.course = new Course(courseId,"","","");
+        this.course = new Course(courseId, "", "", "");
 
     }
 

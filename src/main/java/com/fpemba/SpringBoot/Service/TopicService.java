@@ -25,7 +25,7 @@ public class TopicService {
     }
 
     public Topic getTopic(String id) {
-       return topicRepository.findById(id).orElse(null);
+        return topicRepository.findById(id).orElse(null);
 
     }
 
@@ -38,7 +38,7 @@ public class TopicService {
     }
 
     public void deleteTopic(String id) {
-       topicRepository.deleteById(id);
+        topicRepository.deleteById(id);
 
     }
 }

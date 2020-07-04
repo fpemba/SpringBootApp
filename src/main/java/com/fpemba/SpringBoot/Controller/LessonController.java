@@ -15,9 +15,9 @@ public class LessonController {
     @Autowired
     private LessonService lessonService;
 
-    @GetMapping("/topics/{id}/courses/{id}/lessons")
-    public List<Lesson> getAllLessons(@PathVariable String id) {
-        return lessonService.getAllLessons(id);
+    @GetMapping("/topics/{id}/courses/{courseId}/lessons")
+    public List<Lesson> getAllLessons(@PathVariable String id, @PathVariable String courseId) {
+        return lessonService.getAllLessons(courseId);
     }
 
     @GetMapping("/topics/{topicId}/courses/{courseId}/lessons/{id}")
@@ -25,15 +25,15 @@ public class LessonController {
         lessonService.getCourse(id);
     }
 
-    @PostMapping("/topics/{topicId}/courses/{courseId}/lessons/{id}")
-    public void addLesson(@RequestBody Lesson lesson, @PathVariable String courseId) {
-        lesson.setCourse(new Course(courseId,"","",""));
+    @PostMapping("/topics/{topicId}/courses/{courseId}/lessons")
+    public void addLesson(@RequestBody Lesson lesson, @PathVariable String courseId, @PathVariable String topicId) {
+        lesson.setCourse(new Course(courseId, "", "", ""));
         lessonService.addLesson(lesson);
     }
 
     @PutMapping("/topics/{topicId}/courses/{courseId}/lessons/{id}")
-    public void updateLesson(@RequestBody Lesson lesson, @PathVariable String courseId, @PathVariable String id) {
-       lesson.setCourse(new Course(courseId,"","",""));
+    public void updateLesson(@RequestBody Lesson lesson, @PathVariable String courseId, @PathVariable String id, @PathVariable String topicId) {
+        lesson.setCourse(new Course(courseId, "", "", ""));
         lessonService.updateLesson(lesson);
     }
 
@@ -41,7 +41,6 @@ public class LessonController {
     public void deleteLesson(@PathVariable String id) {
         lessonService.deleteLesson(id);
     }
-
 
 
 }
